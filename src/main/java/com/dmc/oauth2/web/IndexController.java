@@ -20,7 +20,7 @@ public class IndexController {
     public String index(Model model, @LoginUser SessionUser user) {
         model.addAttribute("posts", postsService.findAllDesc());
         if (user != null) {
-            model.addAttribute("userName", user.getName());
+            model.addAttribute("userEmail", user.getEmail());
         }
         return "index";
     }

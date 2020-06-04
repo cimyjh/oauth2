@@ -9,17 +9,19 @@ import javax.persistence.*;
 
 @Getter
 @NoArgsConstructor
+@Table(name= "posts")
 @Entity
 public class Posts extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "posts_id")
     private Long id;
 
     @Column(length = 500, nullable = false)
     private String title;
 
-    @Column(columnDefinition = "TEXT", nullable = false)
+    @Column(nullable = false)
     private String content;
 
     private String author;
